@@ -9,56 +9,56 @@ public class Image {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer imageID;
+    private Integer ImageID;
 
-    private String fileName;
-    private String mimeType;
-    private long fileSize;
-    private String filePath;
-    private LocalDateTime createdAt;
-    private String fileHash;
+    private String FileName;
+    private String MimeType;
+    private long FileSize;
+    private String FilePath;
+    private LocalDateTime CreatedAt;
+    private String FileHash;
     
     public Integer getImageID() {
-        return imageID;
+        return ImageID;
     }
-    public void setImageID(Integer imageID) {
-        this.imageID = imageID;
+    public void setImageID(Integer ImageID) {
+        this.ImageID = ImageID;
     }
     public String getFileName() {
-        return fileName;
+        return FileName;
     }
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
+    public void setFileName(String FileName) {
+        this.FileName = FileName;
     }
     public String getMimeType() {
-        return mimeType;
+        return MimeType;
     }
-    public void setMimeType(String mimeType) {
-        this.mimeType = mimeType;
+    public void setMimeType(String MimeType) {
+        this.MimeType = MimeType;
     }
     public long getFileSize() {
-        return fileSize;
+        return FileSize;
     }
-    public void setFileSize(long fileSize) {
-        this.fileSize = fileSize;
+    public void setFileSize(long FileSize) {
+        this.FileSize = FileSize;
     }
     public String getFilePath() {
-        return filePath;
+        return FilePath;
     }
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
+    public void setFilePath(String FilePath) {
+        this.FilePath = FilePath;
     }
     public LocalDateTime getCreatedAt() {
-        return createdAt;
+        return CreatedAt;
     }
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+    public void setCreatedAt(LocalDateTime CreatedAt) {
+        this.CreatedAt = CreatedAt;
     }
     public String getFileHash() {
-        return fileHash;
+        return FileHash;
     }
-    public void setFileHash(String fileHash) {
-        this.fileHash = fileHash;
+    public void setFileHash(String FileHash) {
+        this.FileHash = FileHash;
     }
 
     

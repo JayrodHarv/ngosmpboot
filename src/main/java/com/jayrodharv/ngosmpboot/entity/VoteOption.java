@@ -8,58 +8,58 @@ public class VoteOption {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer optionID;
+    private Integer OptionID;
 
     @ManyToOne
     @JoinColumn(name = "VoteID")
-    private Vote vote;
+    private Vote Vote;
 
-    private String title;
+    private String Title;
 
     @Column(columnDefinition = "TEXT")
-    private String description;
+    private String Description;
 
     @ManyToOne
     @JoinColumn(name = "ImageID")
-    private Image image;
+    private Image Image;
 
     public Integer getOptionID() {
-        return optionID;
+        return OptionID;
     }
 
-    public void setOptionID(Integer optionID) {
-        this.optionID = optionID;
+    public void setOptionID(Integer OptionID) {
+        this.OptionID = OptionID;
     }
 
     public Vote getVote() {
-        return vote;
+        return Vote;
     }
 
-    public void setVote(Vote vote) {
-        this.vote = vote;
+    public void setVote(Vote Vote) {
+        this.Vote = Vote;
     }
 
     public String getTitle() {
-        return title;
+        return Title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitle(String Title) {
+        this.Title = Title;
     }
 
     public String getDescription() {
-        return description;
+        return Description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescription(String Description) {
+        this.Description = Description;
     }
 
     public Image getImage() {
-        return image;
+        return Image;
     }
 
-    public void setImage(Image image) {
-        this.image = image;
+    public void setImage(Image Image) {
+        this.Image = Image;
     }
 }

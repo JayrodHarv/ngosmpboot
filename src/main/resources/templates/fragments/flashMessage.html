@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="flashMessage">
+
+    <div th:if="${flashMessage}"
+         th:class="'alert alert-' + ${flashType} + ' alert-dismissible fade show position-absolute end-0 m-2 z-3'"
+         style="top: 75px"
+         role="alert"
+         id="flash-alert">
+
+        <strong th:text="${flashMessage}"></strong>
+
+        <button type="button"
+                class="btn-close"
+                data-bs-dismiss="alert">
+        </button>
+    </div>
+
+</div>
+
+<script>
+    setTimeout(() => {
+        const alert = document.getElementById("flash-alert");
+        if (alert) {
+            alert.classList.remove("show");
+            alert.classList.add("hide");
+        }
+    }, 3500);
+</script>
+
+</html>

@@ -7,24 +7,24 @@ import jakarta.persistence.*;
 public class BuildType {
 
     @Id
-    private String buildTypeID;
+    private String BuildTypeID;
 
     @Column(columnDefinition = "TEXT")
-    private String description;
+    private String Description;
 
     public String getBuildTypeID() {
-        return buildTypeID;
+        return BuildTypeID;
     }
 
-    public void setBuildTypeID(String buildTypeID) {
-        this.buildTypeID = buildTypeID;
+    public void setBuildTypeID(String BuildTypeID) {
+        this.BuildTypeID = BuildTypeID;
     }
 
     public String getDescription() {
-        return description;
+        return Description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescription(String Description) {
+        this.Description = Description;
     }
 }

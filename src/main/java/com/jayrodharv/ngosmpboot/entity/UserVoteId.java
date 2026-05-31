@@ -5,18 +5,18 @@ import java.util.Objects;
 
 public class UserVoteId implements Serializable {
 
-    private String userID;
-    private String voteID;
+    private String UserID;
+    private String VoteID;
 
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof UserVoteId)) return false;
         UserVoteId that = (UserVoteId) o;
-        return Objects.equals(userID, that.userID) &&
-               Objects.equals(voteID, that.voteID);
+        return Objects.equals(UserID, that.UserID) &&
+               Objects.equals(VoteID, that.VoteID);
     }
 
     public int hashCode() {
-        return Objects.hash(userID, voteID);
+        return Objects.hash(UserID, VoteID);
     }
 }

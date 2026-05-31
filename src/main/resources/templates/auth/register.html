@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="layouts/base :: content">
+
+<main th:fragment="content" style="margin-top:75px; margin-bottom:40px;">
+    <section class="p-0 d-flex align-items-center position-relative overflow-hidden">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-lg-8 m-auto">
+                    <div class="row my-5">
+                        <div class="col-sm-10 col-xl-8 m-auto">
+
+                            <h2>Welcome to the official No Go Outside server website!</h2>
+                            <p class="lead mb-4">
+                                Please sign up for an account.
+                            </p>
+
+                            <div th:if="${param.registered}"
+                                 class="alert alert-success mb-2">
+                                Registration successful.
+                            </div>
+
+                            <div th:if="${errorMessage}"
+                                 class="alert alert-danger mb-2"
+                                 th:text="${errorMessage}">
+                            </div>
+
+                            <form th:action="@{/register}"
+                                  th:object="${registerDTO}"
+                                  method="post">
+                                <!-- CSRF Token -->
+                                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+
+                                <!-- Email -->
+                                <div class="mb-4">
+                                    <label class="form-label" for="email">
+                                        Email Address *
+                                    </label>
+
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3">
+                                            <i class="bi bi-envelope-fill"></i>
+                                        </span>
+
+                                        <input type="email"
+                                               id="email"
+                                               th:field="*{email}"
+                                               class="form-control border-0 bg-light rounded-end ps-1"
+                                               th:classappend="${#fields.hasErrors('email')} ? ' is-invalid' : ''"
+                                               placeholder="E-mail">
+
+                                        <div class="invalid-feedback"
+                                             th:errors="*{email}">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Password -->
+                                <div class="mb-4">
+                                    <label class="form-label" for="password">
+                                        Password *
+                                    </label>
+
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+
+                                        <input type="password"
+                                               id="password"
+                                               th:field="*{password}"
+                                               class="form-control border-0 bg-light rounded-end ps-1"
+                                               th:classappend="${#fields.hasErrors('password')} ? ' is-invalid' : ''"
+                                               placeholder="*********">
+
+                                        <div class="invalid-feedback"
+                                             th:errors="*{password}">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Confirm Password -->
+                                <div class="mb-4">
+                                    <label class="form-label" for="confirmPassword">
+                                        Confirm Password *
+                                    </label>
+
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+
+                                        <input type="password"
+                                               id="confirmPassword"
+                                               th:field="*{confirmPassword}"
+                                               class="form-control border-0 bg-light rounded-end ps-1"
+                                               th:classappend="${#fields.hasErrors('confirmPassword')} ? ' is-invalid' : ''"
+                                               placeholder="*********">
+
+                                        <div class="invalid-feedback"
+                                             th:errors="*{confirmPassword}">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Display Name -->
+                                <div class="mb-4">
+                                    <label class="form-label" for="displayName">
+                                        Display Name *
+                                    </label>
+
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3">
+                                            <i class="bi bi-person-fill"></i>
+                                        </span>
+
+                                        <input type="text"
+                                               id="displayName"
+                                               th:field="*{displayName}"
+                                               class="form-control border-0 bg-light rounded-end ps-1"
+                                               th:classappend="${#fields.hasErrors('displayName')} ? ' is-invalid' : ''"
+                                               placeholder="Display Name">
+
+                                        <div class="invalid-feedback"
+                                             th:errors="*{displayName}">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Terms -->
+                                <div class="mb-4">
+                                    <div class="form-check">
+
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="agreeToTerms"
+                                               th:field="*{agreeToTerms}">
+
+                                        <label class="form-check-label"
+                                               for="agreeToTerms">
+                                            By signing up, you agree to the
+                                            <a th:href="@{/terms}">
+                                                terms and conditions
+                                            </a>
+                                        </label>
+
+                                        <div class="text-danger"
+                                             th:errors="*{agreeToTerms}">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Submit -->
+                                <div class="align-items-center mt-0">
+                                    <div class="d-grid">
+                                        <button class="btn btn-primary mb-0"
+                                                type="submit">
+                                            Sign Up
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                            <div class="mt-4 text-center">
+                                <span>
+                                    Already have an account?
+                                    <a th:href="@{/login}">
+                                        Log in here
+                                    </a>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>

@@ -8,46 +8,46 @@ import java.time.LocalDateTime;
 public class Vote {
 
     @Id
-    private String voteID;
+    private String VoteID;
 
     @ManyToOne
     @JoinColumn(name = "UserID")
-    private User user;
+    private User User;
 
     @Column(columnDefinition = "TEXT")
-    private String description;
+    private String Description;
 
-    private LocalDateTime startTime;
-    private LocalDateTime endTime;
+    private LocalDateTime StartTime;
+    private LocalDateTime EndTime;
 
     public String getVoteID() {
-        return voteID;
+        return VoteID;
     }
-    public void setVoteID(String voteID) {
-        this.voteID = voteID;
+    public void setVoteID(String VoteID) {
+        this.VoteID = VoteID;
     }
     public User getUser() {
-        return user;
+        return User;
     }
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(User User) {
+        this.User = User;
     }
     public String getDescription() {
-        return description;
+        return Description;
     }
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescription(String Description) {
+        this.Description = Description;
     }
     public LocalDateTime getStartTime() {
-        return startTime;
+        return StartTime;
     }
-    public void setStartTime(LocalDateTime startTime) {
-        this.startTime = startTime;
+    public void setStartTime(LocalDateTime StartTime) {
+        this.StartTime = StartTime;
     }
     public LocalDateTime getEndTime() {
-        return endTime;
+        return EndTime;
     }
-    public void setEndTime(LocalDateTime endTime) {
-        this.endTime = endTime;
+    public void setEndTime(LocalDateTime EndTime) {
+        this.EndTime = EndTime;
     }
 }

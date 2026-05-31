@@ -1,118 +1,125 @@
 package com.jayrodharv.ngosmpboot.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "`User`")
+@Table(name = "User")
 public class User {
 
     @Id
-    private String userID; // email
+    private String UserID; // email
 
     @Column(unique = true)
-    private String displayName;
+    private String DisplayName;
 
-    private String password;
-    private String language;
+    @NotNull
+    private String Password;
+
+    @NotNull
+    private String Language;
 
     @Enumerated(EnumType.STRING)
-    private Status status;
+    private Status Status;
 
     @ManyToOne
     @JoinColumn(name = "RoleID")
-    private Role role;
+    private Role Role;
 
-    private LocalDateTime createdAt;
-    private LocalDateTime lastLoggedIn;
-    private LocalDateTime updatedAt;
+    @NotNull
+    private LocalDateTime CreatedAt;
+
+    private LocalDateTime LastLoggedIn;
+    private LocalDateTime UpdatedAt;
 
     @ManyToOne
     @JoinColumn(name = "PfpImageID")
-    private Image pfpImage;
+    private Image PfpImage;
 
     public enum Status {
         active, inactive, locked
     }
 
     public String getUserID() {
-        return userID;
+        return UserID;
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public void setUserID(String UserID) {
+        this.UserID = UserID;
     }
 
     public String getDisplayName() {
-        return displayName;
+        return DisplayName;
     }
 
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
+    public void setDisplayName(String DisplayName) {
+        this.DisplayName = DisplayName;
     }
 
     public String getPassword() {
-        return password;
+        return Password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword(String Password) {
+        this.Password = Password;
     }
 
     public String getLanguage() {
-        return language;
+        return Language;
     }
 
-    public void setLanguage(String language) {
-        this.language = language;
+    public void setLanguage(String Language) {
+        this.Language = Language;
     }
 
     public Status getStatus() {
-        return status;
+        return Status;
     }
 
-    public void setStatus(Status status) {
-        this.status = status;
+    public void setStatus(Status Status) {
+        this.Status = Status;
     }
 
     public Role getRole() {
-        return role;
+        return Role;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRole(Role Role) {
+        this.Role = Role;
     }
 
     public LocalDateTime getCreatedAt() {
-        return createdAt;
+        return CreatedAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+    public void setCreatedAt(LocalDateTime CreatedAt) {
+        this.CreatedAt = CreatedAt;
     }
 
     public LocalDateTime getLastLoggedIn() {
-        return lastLoggedIn;
+        return LastLoggedIn;
     }
 
-    public void setLastLoggedIn(LocalDateTime lastLoggedIn) {
-        this.lastLoggedIn = lastLoggedIn;
+    public void setLastLoggedIn(LocalDateTime LastLoggedIn) {
+        this.LastLoggedIn = LastLoggedIn;
     }
 
     public LocalDateTime getUpdatedAt() {
-        return updatedAt;
+        return UpdatedAt;
     }
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setUpdatedAt(LocalDateTime UpdatedAt) {
+        this.UpdatedAt = UpdatedAt;
     }
 
     public Image getPfpImage() {
-        return pfpImage;
+        return PfpImage;
     }
 
-    public void setPfpImage(Image pfpImage) {
-        this.pfpImage = pfpImage;
+    public void setPfpImage(Image PfpImage) {
+        this.PfpImage = PfpImage;
     }
 
     

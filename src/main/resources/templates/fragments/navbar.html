@@ -1,11 +1,11 @@
 <nav th:fragment="navbar(pageTitle)"
      class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark"
-     style="height: 75px"
+     style="height: 75px; z-index: 1030;"
      aria-label="Main navigation">
 
     <div class="container-fluid">
 
-        <img th:src="@{/images/smp/NoGoOutsideWebsiteIcon.png}"
+        <img th:src="@{/images/NoGoOutsideWebsiteIcon.png}"
              style="height: 65px"
              alt="Logo">
 
@@ -20,7 +20,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                 <li class="nav-item">
-                    <a th:href="@{/smp}"
+                    <a th:href="@{/}"
                        class="nav-link px-2"
                        th:classappend="${pageTitle == 'Home'} ? ' link-light' : ''">
                         Home
@@ -28,7 +28,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a th:href="@{/server-builds}"
+                    <a th:href="@{/builds}"
                        class="nav-link px-2"
                        th:classappend="${pageTitle == 'Server Builds'} ? ' link-light' : ''">
                         Builds
@@ -47,10 +47,10 @@
 
                 <li class="nav-item dropdown"
                     th:if="${activeSMPUser != null and (
-                        activeSMPUser.role.canViewUsers()
-                        or activeSMPUser.role.canViewWorlds()
-                        or activeSMPUser.role.canViewBuildTypes()
-                        or activeSMPUser.role.canViewRoles()
+                        activeSMPUser.Role.isCanViewUsers()
+                        or activeSMPUser.Role.isCanViewWorlds()
+                        or activeSMPUser.Role.isCanViewBuildTypes()
+                        or activeSMPUser.Role.isCanViewRoles()
                     )}">
 
                     <a class="nav-link dropdown-toggle"
@@ -61,30 +61,30 @@
 
                     <ul class="dropdown-menu dropdown-menu-dark">
 
-                        <li th:if="${activeSMPUser.role.canViewUsers()}">
+                        <li th:if="${activeSMPUser.Role.isCanViewUsers()}">
                             <a class="dropdown-item"
-                               th:href="@{/smp-users}">
+                               th:href="@{/users}">
                                 Users
                             </a>
                         </li>
 
-                        <li th:if="${activeSMPUser.role.canViewRoles()}">
+                        <li th:if="${activeSMPUser.Role.isCanViewRoles()}">
                             <a class="dropdown-item"
-                               th:href="@{/smp-roles}">
+                               th:href="@{/roles}">
                                 Roles
                             </a>
                         </li>
 
-                        <li th:if="${activeSMPUser.role.canViewWorlds()}">
+                        <li th:if="${activeSMPUser.Role.isCanViewWorlds()}">
                             <a class="dropdown-item"
-                               th:href="@{/smp-worlds}">
+                               th:href="@{/worlds}">
                                 Worlds
                             </a>
                         </li>
 
-                        <li th:if="${activeSMPUser.role.canViewBuildTypes()}">
+                        <li th:if="${activeSMPUser.Role.isCanViewBuildTypes()}">
                             <a class="dropdown-item"
-                               th:href="@{/smp-build-types}">
+                               th:href="@{/build-types}">
                                 Build Types
                             </a>
                         </li>
@@ -103,12 +103,12 @@
 
                 <div th:if="${activeSMPUser == null}">
 
-                    <a th:href="@{/smp-login}"
+                    <a th:href="@{/login}"
                        class="btn btn-outline-primary me-2">
                         Sign In
                     </a>
 
-                    <a th:href="@{/smp-signup}"
+                    <a th:href="@{/register}"
                        class="btn btn-primary">
                         Sign Up
                     </a>
@@ -125,21 +125,21 @@
                        class="d-block text-decoration-none dropdown-toggle"
                        data-bs-toggle="dropdown">
 
-                        <img th:if="${activeSMPUser.pfpImage != null}"
-                             th:src="${activeSMPUser.pfpImage.filePath}"
+                        <img th:if="${activeSMPUser.PfpImage != null}"
+                             th:src="${activeSMPUser.PfpImage.FilePath}"
                              width="45"
                              height="45"
                              class="rounded-circle"
                              alt="Profile">
 
-                        <img th:unless="${activeSMPUser.pfpImage != null}"
-                             th:src="@{/images/smp/_default_pfp.png}"
+                        <img th:unless="${activeSMPUser.PfpImage != null}"
+                             th:src="@{/images/_default_pfp.png}"
                              width="45"
                              height="45"
                              class="rounded-circle"
                              alt="Profile">
 
-                        <span th:text="${activeSMPUser.displayName}">
+                        <span th:text="${activeSMPUser.DisplayName}">
                             Username
                         </span>
 
@@ -160,7 +160,7 @@
 
                         <li>
                             <a class="dropdown-item"
-                               th:href="@{/smp-edit-profile(userID=${activeSMPUser.userID})}">
+                               th:href="@{/edit-profile(userID=${activeSMPUser.UserID})}">
                                 Profile
                             </a>
                         </li>
@@ -168,10 +168,11 @@
                         <li><hr class="dropdown-divider"></li>
 
                         <li>
-                            <a class="dropdown-item"
-                               th:href="@{/smp-logout}">
-                                Sign out
-                            </a>
+                            <form th:action="@{/logout}" method="post" class="d-inline">
+                                <button type="submit" class="dropdown-item">
+                                    Sign out
+                                </button>
+                            </form>
                         </li>
                     </ul>
                 </div>

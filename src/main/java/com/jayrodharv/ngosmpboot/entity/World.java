@@ -8,34 +8,34 @@ import java.time.LocalDate;
 public class World {
 
     @Id
-    private String worldID;
+    private String WorldID;
 
-    private LocalDate dateStarted;
+    private LocalDate DateStarted;
 
     @Column(columnDefinition = "TEXT")
-    private String description;
+    private String Description;
 
     public String getWorldID() {
-        return worldID;
+        return WorldID;
     }
 
-    public void setWorldID(String worldID) {
-        this.worldID = worldID;
+    public void setWorldID(String WorldID) {
+        this.WorldID = WorldID;
     }
 
     public LocalDate getDateStarted() {
-        return dateStarted;
+        return DateStarted;
     }
 
-    public void setDateStarted(LocalDate dateStarted) {
-        this.dateStarted = dateStarted;
+    public void setDateStarted(LocalDate DateStarted) {
+        this.DateStarted = DateStarted;
     }
 
     public String getDescription() {
-        return description;
+        return Description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescription(String Description) {
+        this.Description = Description;
     }
 }

@@ -7,237 +7,237 @@ import jakarta.persistence.*;
 public class Role {
 
     @Id
-    private String roleID;
+    private String RoleID;
 
-    private boolean canAddBuilds;
-    private boolean canEditAllBuilds;
-    private boolean canDeleteAllBuilds;
+    private boolean CanAddBuilds;
+    private boolean CanEditAllBuilds;
+    private boolean CanDeleteAllBuilds;
 
-    private boolean canViewBuildTypes;
-    private boolean canAddBuildTypes;
-    private boolean canEditBuildTypes;
-    private boolean canDeleteBuildTypes;
+    private boolean CanViewBuildTypes;
+    private boolean CanAddBuildTypes;
+    private boolean CanEditBuildTypes;
+    private boolean CanDeleteBuildTypes;
 
-    private boolean canViewWorlds;
-    private boolean canAddWorlds;
-    private boolean canEditWorlds;
-    private boolean canDeleteWorlds;
+    private boolean CanViewWorlds;
+    private boolean CanAddWorlds;
+    private boolean CanEditWorlds;
+    private boolean CanDeleteWorlds;
 
-    private boolean canViewAllVotes;
-    private boolean canAddVotes;
-    private boolean canEditAllVotes;
-    private boolean canDeleteAllVotes;
+    private boolean CanViewAllVotes;
+    private boolean CanAddVotes;
+    private boolean CanEditAllVotes;
+    private boolean CanDeleteAllVotes;
 
-    private boolean canViewRoles;
-    private boolean canAddRoles;
-    private boolean canEditRoles;
-    private boolean canDeleteRoles;
+    private boolean CanViewRoles;
+    private boolean CanAddRoles;
+    private boolean CanEditRoles;
+    private boolean CanDeleteRoles;
 
-    private boolean canViewUsers;
-    private boolean canAddUsers;
-    private boolean canEditUsers;
-    private boolean canBanUsers;
+    private boolean CanViewUsers;
+    private boolean CanAddUsers;
+    private boolean CanEditUsers;
+    private boolean CanBanUsers;
 
-    private String description;
+    private String Description;
 
     public String getRoleID() {
-        return roleID;
+        return RoleID;
     }
 
-    public void setRoleID(String roleID) {
-        this.roleID = roleID;
+    public void setRoleID(String RoleID) {
+        this.RoleID = RoleID;
     }
 
     public boolean isCanAddBuilds() {
-        return canAddBuilds;
+        return CanAddBuilds;
     }
 
-    public void setCanAddBuilds(boolean canAddBuilds) {
-        this.canAddBuilds = canAddBuilds;
+    public void setCanAddBuilds(boolean CanAddBuilds) {
+        this.CanAddBuilds = CanAddBuilds;
     }
 
     public boolean isCanEditAllBuilds() {
-        return canEditAllBuilds;
+        return CanEditAllBuilds;
     }
 
-    public void setCanEditAllBuilds(boolean canEditAllBuilds) {
-        this.canEditAllBuilds = canEditAllBuilds;
+    public void setCanEditAllBuilds(boolean CanEditAllBuilds) {
+        this.CanEditAllBuilds = CanEditAllBuilds;
     }
 
     public boolean isCanDeleteAllBuilds() {
-        return canDeleteAllBuilds;
+        return CanDeleteAllBuilds;
     }
 
-    public void setCanDeleteAllBuilds(boolean canDeleteAllBuilds) {
-        this.canDeleteAllBuilds = canDeleteAllBuilds;
+    public void setCanDeleteAllBuilds(boolean CanDeleteAllBuilds) {
+        this.CanDeleteAllBuilds = CanDeleteAllBuilds;
     }
 
     public boolean isCanViewBuildTypes() {
-        return canViewBuildTypes;
+        return CanViewBuildTypes;
     }
 
-    public void setCanViewBuildTypes(boolean canViewBuildTypes) {
-        this.canViewBuildTypes = canViewBuildTypes;
+    public void setCanViewBuildTypes(boolean CanViewBuildTypes) {
+        this.CanViewBuildTypes = CanViewBuildTypes;
     }
 
     public boolean isCanAddBuildTypes() {
-        return canAddBuildTypes;
+        return CanAddBuildTypes;
     }
 
-    public void setCanAddBuildTypes(boolean canAddBuildTypes) {
-        this.canAddBuildTypes = canAddBuildTypes;
+    public void setCanAddBuildTypes(boolean CanAddBuildTypes) {
+        this.CanAddBuildTypes = CanAddBuildTypes;
     }
 
     public boolean isCanEditBuildTypes() {
-        return canEditBuildTypes;
+        return CanEditBuildTypes;
     }
 
-    public void setCanEditBuildTypes(boolean canEditBuildTypes) {
-        this.canEditBuildTypes = canEditBuildTypes;
+    public void setCanEditBuildTypes(boolean CanEditBuildTypes) {
+        this.CanEditBuildTypes = CanEditBuildTypes;
     }
 
     public boolean isCanDeleteBuildTypes() {
-        return canDeleteBuildTypes;
+        return CanDeleteBuildTypes;
     }
 
-    public void setCanDeleteBuildTypes(boolean canDeleteBuildTypes) {
-        this.canDeleteBuildTypes = canDeleteBuildTypes;
+    public void setCanDeleteBuildTypes(boolean CanDeleteBuildTypes) {
+        this.CanDeleteBuildTypes = CanDeleteBuildTypes;
     }
 
     public boolean isCanViewWorlds() {
-        return canViewWorlds;
+        return CanViewWorlds;
     }
 
-    public void setCanViewWorlds(boolean canViewWorlds) {
-        this.canViewWorlds = canViewWorlds;
+    public void setCanViewWorlds(boolean CanViewWorlds) {
+        this.CanViewWorlds = CanViewWorlds;
     }
 
     public boolean isCanAddWorlds() {
-        return canAddWorlds;
+        return CanAddWorlds;
     }
 
-    public void setCanAddWorlds(boolean canAddWorlds) {
-        this.canAddWorlds = canAddWorlds;
+    public void setCanAddWorlds(boolean CanAddWorlds) {
+        this.CanAddWorlds = CanAddWorlds;
     }
 
     public boolean isCanEditWorlds() {
-        return canEditWorlds;
+        return CanEditWorlds;
     }
 
-    public void setCanEditWorlds(boolean canEditWorlds) {
-        this.canEditWorlds = canEditWorlds;
+    public void setCanEditWorlds(boolean CanEditWorlds) {
+        this.CanEditWorlds = CanEditWorlds;
     }
 
     public boolean isCanDeleteWorlds() {
-        return canDeleteWorlds;
+        return CanDeleteWorlds;
     }
 
-    public void setCanDeleteWorlds(boolean canDeleteWorlds) {
-        this.canDeleteWorlds = canDeleteWorlds;
+    public void setCanDeleteWorlds(boolean CanDeleteWorlds) {
+        this.CanDeleteWorlds = CanDeleteWorlds;
     }
 
     public boolean isCanViewAllVotes() {
-        return canViewAllVotes;
+        return CanViewAllVotes;
     }
 
-    public void setCanViewAllVotes(boolean canViewAllVotes) {
-        this.canViewAllVotes = canViewAllVotes;
+    public void setCanViewAllVotes(boolean CanViewAllVotes) {
+        this.CanViewAllVotes = CanViewAllVotes;
     }
 
     public boolean isCanAddVotes() {
-        return canAddVotes;
+        return CanAddVotes;
     }
 
-    public void setCanAddVotes(boolean canAddVotes) {
-        this.canAddVotes = canAddVotes;
+    public void setCanAddVotes(boolean CanAddVotes) {
+        this.CanAddVotes = CanAddVotes;
     }
 
     public boolean isCanEditAllVotes() {
-        return canEditAllVotes;
+        return CanEditAllVotes;
     }
 
-    public void setCanEditAllVotes(boolean canEditAllVotes) {
-        this.canEditAllVotes = canEditAllVotes;
+    public void setCanEditAllVotes(boolean CanEditAllVotes) {
+        this.CanEditAllVotes = CanEditAllVotes;
     }
 
     public boolean isCanDeleteAllVotes() {
-        return canDeleteAllVotes;
+        return CanDeleteAllVotes;
     }
 
-    public void setCanDeleteAllVotes(boolean canDeleteAllVotes) {
-        this.canDeleteAllVotes = canDeleteAllVotes;
+    public void setCanDeleteAllVotes(boolean CanDeleteAllVotes) {
+        this.CanDeleteAllVotes = CanDeleteAllVotes;
     }
 
     public boolean isCanViewRoles() {
-        return canViewRoles;
+        return CanViewRoles;
     }
 
-    public void setCanViewRoles(boolean canViewRoles) {
-        this.canViewRoles = canViewRoles;
+    public void setCanViewRoles(boolean CanViewRoles) {
+        this.CanViewRoles = CanViewRoles;
     }
 
     public boolean isCanAddRoles() {
-        return canAddRoles;
+        return CanAddRoles;
     }
 
-    public void setCanAddRoles(boolean canAddRoles) {
-        this.canAddRoles = canAddRoles;
+    public void setCanAddRoles(boolean CanAddRoles) {
+        this.CanAddRoles = CanAddRoles;
     }
 
     public boolean isCanEditRoles() {
-        return canEditRoles;
+        return CanEditRoles;
     }
 
-    public void setCanEditRoles(boolean canEditRoles) {
-        this.canEditRoles = canEditRoles;
+    public void setCanEditRoles(boolean CanEditRoles) {
+        this.CanEditRoles = CanEditRoles;
     }
 
     public boolean isCanDeleteRoles() {
-        return canDeleteRoles;
+        return CanDeleteRoles;
     }
 
-    public void setCanDeleteRoles(boolean canDeleteRoles) {
-        this.canDeleteRoles = canDeleteRoles;
+    public void setCanDeleteRoles(boolean CanDeleteRoles) {
+        this.CanDeleteRoles = CanDeleteRoles;
     }
 
     public boolean isCanViewUsers() {
-        return canViewUsers;
+        return CanViewUsers;
     }
 
-    public void setCanViewUsers(boolean canViewUsers) {
-        this.canViewUsers = canViewUsers;
+    public void setCanViewUsers(boolean CanViewUsers) {
+        this.CanViewUsers = CanViewUsers;
     }
 
     public boolean isCanAddUsers() {
-        return canAddUsers;
+        return CanAddUsers;
     }
 
-    public void setCanAddUsers(boolean canAddUsers) {
-        this.canAddUsers = canAddUsers;
+    public void setCanAddUsers(boolean CanAddUsers) {
+        this.CanAddUsers = CanAddUsers;
     }
 
     public boolean isCanEditUsers() {
-        return canEditUsers;
+        return CanEditUsers;
     }
 
-    public void setCanEditUsers(boolean canEditUsers) {
-        this.canEditUsers = canEditUsers;
+    public void setCanEditUsers(boolean CanEditUsers) {
+        this.CanEditUsers = CanEditUsers;
     }
 
     public boolean isCanBanUsers() {
-        return canBanUsers;
+        return CanBanUsers;
     }
 
-    public void setCanBanUsers(boolean canBanUsers) {
-        this.canBanUsers = canBanUsers;
+    public void setCanBanUsers(boolean CanBanUsers) {
+        this.CanBanUsers = CanBanUsers;
     }
 
     public String getDescription() {
-        return description;
+        return Description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescription(String Description) {
+        this.Description = Description;
     }
 
     

@@ -8,36 +8,36 @@ import jakarta.persistence.*;
 public class BuildImage {
 
     @Id
-    private String buildID;
+    private String BuildID;
 
     @Id
-    private Integer imageID;
+    private Integer ImageID;
 
-    private boolean isPrimary;
-    private int sortOrder;
+    private boolean IsPrimary;
+    private int SortOrder;
     
     public String getBuildID() {
-        return buildID;
+        return BuildID;
     }
-    public void setBuildID(String buildID) {
-        this.buildID = buildID;
+    public void setBuildID(String BuildID) {
+        this.BuildID = BuildID;
     }
     public Integer getImageID() {
-        return imageID;
+        return ImageID;
     }
-    public void setImageID(Integer imageID) {
-        this.imageID = imageID;
+    public void setImageID(Integer ImageID) {
+        this.ImageID = ImageID;
     }
-    public boolean isPrimary() {
-        return isPrimary;
+    public boolean isIsPrimary() {
+        return IsPrimary;
     }
-    public void setPrimary(boolean isPrimary) {
-        this.isPrimary = isPrimary;
+    public void setIsPrimary(boolean IsPrimary) {
+        this.IsPrimary = IsPrimary;
     }
     public int getSortOrder() {
-        return sortOrder;
+        return SortOrder;
     }
-    public void setSortOrder(int sortOrder) {
-        this.sortOrder = sortOrder;
+    public void setSortOrder(int SortOrder) {
+        this.SortOrder = SortOrder;
     }
 }

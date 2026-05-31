@@ -9,90 +9,90 @@ import java.time.LocalDateTime;
 public class Build {
 
     @Id
-    private String buildID;
+    private String BuildID;
 
     @ManyToOne
     @JoinColumn(name = "UserID")
-    private User user;
+    private User User;
 
     @ManyToOne
     @JoinColumn(name = "WorldID")
-    private World world;
+    private World World;
 
     @ManyToOne
     @JoinColumn(name = "BuildTypeID")
-    private BuildType buildType;
+    private BuildType BuildType;
 
-    private LocalDate dateBuilt;
+    private LocalDate DateBuilt;
 
-    private String coordinates;
+    private String Coordinates;
 
-    private LocalDateTime createdAt;
+    private LocalDateTime CreatedAt;
 
     @Column(columnDefinition = "TEXT")
-    private String description;
+    private String Description;
 
     public String getBuildID() {
-        return buildID;
+        return BuildID;
     }
 
-    public void setBuildID(String buildID) {
-        this.buildID = buildID;
+    public void setBuildID(String BuildID) {
+        this.BuildID = BuildID;
     }
 
     public User getUser() {
-        return user;
+        return User;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(User User) {
+        this.User = User;
     }
 
     public World getWorld() {
-        return world;
+        return World;
     }
 
-    public void setWorld(World world) {
-        this.world = world;
+    public void setWorld(World World) {
+        this.World = World;
     }
 
     public BuildType getBuildType() {
-        return buildType;
+        return BuildType;
     }
 
-    public void setBuildType(BuildType buildType) {
-        this.buildType = buildType;
+    public void setBuildType(BuildType BuildType) {
+        this.BuildType = BuildType;
     }
 
     public LocalDate getDateBuilt() {
-        return dateBuilt;
+        return DateBuilt;
     }
 
-    public void setDateBuilt(LocalDate dateBuilt) {
-        this.dateBuilt = dateBuilt;
+    public void setDateBuilt(LocalDate DateBuilt) {
+        this.DateBuilt = DateBuilt;
     }
 
     public String getCoordinates() {
-        return coordinates;
+        return Coordinates;
     }
 
-    public void setCoordinates(String coordinates) {
-        this.coordinates = coordinates;
+    public void setCoordinates(String Coordinates) {
+        this.Coordinates = Coordinates;
     }
 
     public LocalDateTime getCreatedAt() {
-        return createdAt;
+        return CreatedAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+    public void setCreatedAt(LocalDateTime CreatedAt) {
+        this.CreatedAt = CreatedAt;
     }
 
     public String getDescription() {
-        return description;
+        return Description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescription(String Description) {
+        this.Description = Description;
     }
 }

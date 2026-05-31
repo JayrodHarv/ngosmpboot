@@ -9,44 +9,44 @@ import java.time.LocalDateTime;
 public class UserVote {
 
     @Id
-    private String userID;
+    private String UserID;
 
     @Id
-    private String voteID;
+    private String VoteID;
 
-    private Integer optionID;
+    private Integer OptionID;
 
-    private LocalDateTime voteTime;
+    private LocalDateTime VoteTime;
 
     public String getUserID() {
-        return userID;
+        return UserID;
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public void setUserID(String UserID) {
+        this.UserID = UserID;
     }
 
     public String getVoteID() {
-        return voteID;
+        return VoteID;
     }
 
-    public void setVoteID(String voteID) {
-        this.voteID = voteID;
+    public void setVoteID(String VoteID) {
+        this.VoteID = VoteID;
     }
 
     public Integer getOptionID() {
-        return optionID;
+        return OptionID;
     }
 
-    public void setOptionID(Integer optionID) {
-        this.optionID = optionID;
+    public void setOptionID(Integer OptionID) {
+        this.OptionID = OptionID;
     }
 
     public LocalDateTime getVoteTime() {
-        return voteTime;
+        return VoteTime;
     }
 
-    public void setVoteTime(LocalDateTime voteTime) {
-        this.voteTime = voteTime;
+    public void setVoteTime(LocalDateTime VoteTime) {
+        this.VoteTime = VoteTime;
     }
 }

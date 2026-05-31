@@ -3,11 +3,13 @@
 
 <head th:replace="fragments/head :: head(${pageTitle})"></head>
 
-<body>
+<body style="padding-top: 75px;">
 
 <div th:replace="fragments/navbar :: navbar(${pageTitle})"></div>
 
-<main th:insert="~{${contentPage} :: content}"></main>
+<div th:replace="fragments/flashMessage :: flashMessage"></div>
+
+<main th:insert="${contentPage} :: content"></main>
 
 <footer th:replace="fragments/footer :: footer"></footer>
 
