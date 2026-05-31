@@ -1,0 +1,181 @@
+<nav th:fragment="navbar(pageTitle)"
+     class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark"
+     style="height: 75px"
+     aria-label="Main navigation">
+
+    <div class="container-fluid">
+
+        <img th:src="@{/images/smp/NoGoOutsideWebsiteIcon.png}"
+             style="height: 65px"
+             alt="Logo">
+
+        <button class="navbar-toggler p-0 border-0"
+                type="button"
+                id="navbarSideCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse offcanvas-collapse">
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a th:href="@{/smp}"
+                       class="nav-link px-2"
+                       th:classappend="${pageTitle == 'Home'} ? ' link-light' : ''">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a th:href="@{/server-builds}"
+                       class="nav-link px-2"
+                       th:classappend="${pageTitle == 'Server Builds'} ? ' link-light' : ''">
+                        Builds
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a th:href="@{/votes}"
+                       class="nav-link px-2"
+                       th:classappend="${pageTitle == 'Votes'} ? ' link-light' : ''">
+                        Votes
+                    </a>
+                </li>
+
+                <!-- Manage Menu -->
+
+                <li class="nav-item dropdown"
+                    th:if="${activeSMPUser != null and (
+                        activeSMPUser.role.canViewUsers()
+                        or activeSMPUser.role.canViewWorlds()
+                        or activeSMPUser.role.canViewBuildTypes()
+                        or activeSMPUser.role.canViewRoles()
+                    )}">
+
+                    <a class="nav-link dropdown-toggle"
+                       href="#"
+                       data-bs-toggle="dropdown">
+                        Manage
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-dark">
+
+                        <li th:if="${activeSMPUser.role.canViewUsers()}">
+                            <a class="dropdown-item"
+                               th:href="@{/smp-users}">
+                                Users
+                            </a>
+                        </li>
+
+                        <li th:if="${activeSMPUser.role.canViewRoles()}">
+                            <a class="dropdown-item"
+                               th:href="@{/smp-roles}">
+                                Roles
+                            </a>
+                        </li>
+
+                        <li th:if="${activeSMPUser.role.canViewWorlds()}">
+                            <a class="dropdown-item"
+                               th:href="@{/smp-worlds}">
+                                Worlds
+                            </a>
+                        </li>
+
+                        <li th:if="${activeSMPUser.role.canViewBuildTypes()}">
+                            <a class="dropdown-item"
+                               th:href="@{/smp-build-types}">
+                                Build Types
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+            </ul>
+
+            <!-- Right Side -->
+
+            <div class="text-end">
+
+                <!-- Logged Out -->
+
+                <div th:if="${activeSMPUser == null}">
+
+                    <a th:href="@{/smp-login}"
+                       class="btn btn-outline-primary me-2">
+                        Sign In
+                    </a>
+
+                    <a th:href="@{/smp-signup}"
+                       class="btn btn-primary">
+                        Sign Up
+                    </a>
+
+                </div>
+
+                <!-- Logged In -->
+
+                <div th:unless="${activeSMPUser == null}"
+                     class="dropdown text-end px-2"
+                     data-bs-theme="dark">
+
+                    <a href="#"
+                       class="d-block text-decoration-none dropdown-toggle"
+                       data-bs-toggle="dropdown">
+
+                        <img th:if="${activeSMPUser.pfpImage != null}"
+                             th:src="${activeSMPUser.pfpImage.filePath}"
+                             width="45"
+                             height="45"
+                             class="rounded-circle"
+                             alt="Profile">
+
+                        <img th:unless="${activeSMPUser.pfpImage != null}"
+                             th:src="@{/images/smp/_default_pfp.png}"
+                             width="45"
+                             height="45"
+                             class="rounded-circle"
+                             alt="Profile">
+
+                        <span th:text="${activeSMPUser.displayName}">
+                            Username
+                        </span>
+
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end">
+
+                        <li>
+                            <h6 class="dropdown-item-text">
+                                Role:
+                                <span th:text="${activeSMPUser.role.roleID}">
+                                    User
+                                </span>
+                            </h6>
+                        </li>
+
+                        <li><hr class="dropdown-divider"></li>
+
+                        <li>
+                            <a class="dropdown-item"
+                               th:href="@{/smp-edit-profile(userID=${activeSMPUser.userID})}">
+                                Profile
+                            </a>
+                        </li>
+
+                        <li><hr class="dropdown-divider"></li>
+
+                        <li>
+                            <a class="dropdown-item"
+                               th:href="@{/smp-logout}">
+                                Sign out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
